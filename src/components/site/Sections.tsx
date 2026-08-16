@@ -28,7 +28,7 @@ export function Hero() {
             <Reveal>
               <div className="flex items-center gap-3">
                 <span className="h-1.5 w-1.5 animate-flicker bg-red-bright" />
-                <span className="section-label">01 — Driver Profile</span>
+                <span className="section-label">01 — Designer Profile</span>
               </div>
             </Reveal>
 
@@ -63,7 +63,8 @@ export function Hero() {
                   className="group relative overflow-hidden border border-[color:var(--racing-red)] px-7 py-3.5 font-mono text-xs tracking-[0.25em] text-racing-white transition-shadow hover:shadow-[var(--glow-red)]"
                 >
                   <span className="absolute inset-0 -translate-x-full bg-[image:var(--gradient-red)] transition-transform duration-300 group-hover:translate-x-0" />
-                  <span className="relative">VIEW PROJECTS</span>
+                  <span className="relative">VIEW 3D WORKS</span>
+
                 </a>
                 <a
                   href="#contact"
@@ -90,8 +91,8 @@ export function Hero() {
               <dl className="mt-5 grid grid-cols-3 gap-3 font-mono text-[0.6rem] tracking-[0.18em]">
                 {[
                   ["STATUS", "ACTIVE"],
-                  ["FOCUS", "AI / SEC"],
-                  ["GRADE", "12"],
+                  ["FOCUS", "3D / DESIGN"],
+                  ["BORN", "12/07/2008"],
                 ].map(([k, v]) => (
                   <div key={k} className="border-l border-[color:var(--racing-red)] pl-2">
                     <dt className="text-racing-gray">{k}</dt>
@@ -99,6 +100,7 @@ export function Hero() {
                   </div>
                 ))}
               </dl>
+
             </div>
           </Reveal>
         </div>
@@ -123,25 +125,27 @@ export function About() {
           <div className="max-w-2xl">
             <Reveal delay={100}>
               <p className="text-lg leading-relaxed text-racing-white/90">
-                I am a grade 12 high school student building a serious path in technology — writing
-                code every day, exploring artificial intelligence, and learning how systems break so
-                I can help make them stronger.
+                I am a grade 12 high school student, born 12/07/2008, focused on 3D modelling and
+                industrial design. Most of my time goes into Blender — modelling vehicles, products,
+                and interior environments, then lighting and rendering them until the form reads
+                exactly as intended.
               </p>
             </Reveal>
             <Reveal delay={180}>
               <p className="mt-6 leading-relaxed text-racing-gray">
-                Beyond the terminal, I train my communication: English and Arabic, plus public
-                speaking. Precision in engineering and clarity in language are the same discipline to
-                me — both are about delivering the right signal, fast.
+                My interest is industrial design: shapes that are not only good looking but buildable
+                — proportion, panel lines, materials, and function. Alongside that I train my
+                communication in English and Arabic, plus public speaking, because a design is only
+                as strong as the way you present it.
               </p>
             </Reveal>
             <Reveal delay={260}>
               <ul className="mt-10 grid gap-3 sm:grid-cols-2">
                 {[
-                  ["INTEREST", "PROGRAMMING"],
-                  ["INTEREST", "ARTIFICIAL INTELLIGENCE"],
-                  ["INTEREST", "CYBERSECURITY"],
-                  ["INTEREST", "LANGUAGES & SPEAKING"],
+                  ["FOCUS", "3D MODELLING (BLENDER)"],
+                  ["FOCUS", "INDUSTRIAL DESIGN"],
+                  ["FOCUS", "RENDERING & LIGHTING"],
+                  ["BORN", "12 JULY 2008"],
                 ].map(([k, v]) => (
                   <li key={v} className="tele-card px-4 py-3.5">
                     <span className="font-mono text-[0.6rem] tracking-[0.25em] text-red-bright">{k}</span>
@@ -150,6 +154,7 @@ export function About() {
                 ))}
               </ul>
             </Reveal>
+
           </div>
         </div>
       </div>
@@ -195,7 +200,7 @@ export function Projects() {
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-25" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <SectionHead no="04" title="SELECTED PROJECTS" />
+          <SectionHead no="04" title="3D WORKS" />
         </Reveal>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
