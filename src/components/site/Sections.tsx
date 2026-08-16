@@ -201,38 +201,43 @@ export function Projects() {
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {projects.map((p, i) => (
             <Reveal key={p.no} delay={i * 70}>
-              <article className="tele-card h-full p-7">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="font-mono text-[0.65rem] tracking-[0.25em] text-red-bright">
-                    PROJECT {p.no}
-                  </span>
-                  <span className="font-mono text-[0.6rem] tracking-[0.2em] text-racing-gray">
-                    // DATA
-                  </span>
+              <article className="tele-card h-full overflow-hidden">
+                <div className="relative overflow-hidden border-b border-[color:var(--racing-dark-red)]">
+                  <img
+                    src={p.image}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="aspect-video w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-racing-black/70 to-transparent" />
                 </div>
-                <h3 className="mt-5 font-display text-2xl font-bold tracking-[0.06em]">{p.name}</h3>
-                <p className="mt-3 leading-relaxed text-racing-gray">{p.description}</p>
-                <ul className="mt-6 flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
-                    <li
-                      key={t}
-                      className="border border-[color:var(--racing-dark-red)] px-2.5 py-1 font-mono text-[0.6rem] tracking-[0.2em] text-racing-gray"
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={p.href}
-                  className="group mt-7 inline-flex items-center gap-3 font-mono text-[0.68rem] tracking-[0.25em] text-racing-white"
-                >
-                  VIEW PROJECT
-                  <span className="block h-px w-8 bg-[color:var(--racing-red)] transition-all duration-300 group-hover:w-14" />
-                </a>
+                <div className="p-7">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="font-mono text-[0.65rem] tracking-[0.25em] text-red-bright">
+                      WORK {p.no}
+                    </span>
+                    <span className="font-mono text-[0.6rem] tracking-[0.2em] text-racing-gray">
+                      // 3D
+                    </span>
+                  </div>
+                  <h3 className="mt-5 font-display text-2xl font-bold tracking-[0.06em]">{p.name}</h3>
+                  <p className="mt-3 leading-relaxed text-racing-gray">{p.description}</p>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <li
+                        key={t}
+                        className="border border-[color:var(--racing-dark-red)] px-2.5 py-1 font-mono text-[0.6rem] tracking-[0.2em] text-racing-gray"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
