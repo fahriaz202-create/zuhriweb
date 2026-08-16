@@ -142,3 +142,149 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============ RACING DESIGN SYSTEM ============ */
+:root {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.19 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.19 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.556 0.238 27.5);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.63 0 0);
+  --accent: oklch(0.6 0.245 27.8);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.3 0.06 25 / 45%);
+  --input: oklch(0.3 0.03 25 / 55%);
+  --ring: oklch(0.556 0.238 27.5);
+
+  --racing-black: #080808;
+  --racing-surface: #111111;
+  --racing-dark-red: #3b0808;
+  --racing-red: #e10600;
+  --racing-red-bright: #ff1e14;
+  --racing-white: #f5f5f5;
+  --racing-gray: #8a8a8a;
+
+  --gradient-red: linear-gradient(100deg, var(--racing-red), var(--racing-red-bright));
+  --gradient-fade: linear-gradient(180deg, #080808 0%, #111111 100%);
+  --glow-red: 0 0 24px color-mix(in oklab, var(--racing-red) 35%, transparent);
+  --glow-red-strong: 0 0 44px color-mix(in oklab, var(--racing-red-bright) 45%, transparent);
+  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-racing-black: var(--racing-black);
+  --color-racing-surface: var(--racing-surface);
+  --color-dark-red: var(--racing-dark-red);
+  --color-red-primary: var(--racing-red);
+  --color-red-bright: var(--racing-red-bright);
+  --color-racing-white: var(--racing-white);
+  --color-racing-gray: var(--racing-gray);
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--racing-black);
+}
+
+body {
+  background-color: var(--racing-black);
+  color: var(--racing-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--racing-gray) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--racing-gray) 8%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility diagonal-lines {
+  background-image: repeating-linear-gradient(
+    115deg,
+    transparent 0 22px,
+    color-mix(in oklab, var(--racing-red) 12%, transparent) 22px 23px
+  );
+}
+
+@utility section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--racing-red-bright);
+}
+
+@utility deco-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--racing-red) 45%, transparent);
+}
+
+@utility tele-card {
+  position: relative;
+  background: linear-gradient(160deg, #111111 0%, #0b0b0b 100%);
+  border: 1px solid color-mix(in oklab, var(--racing-dark-red) 90%, transparent);
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  &:hover {
+    border-color: var(--racing-red);
+    transform: translateY(-4px);
+    box-shadow: var(--glow-red);
+  }
+}
+
+@utility red-rule {
+  height: 1px;
+  background: var(--gradient-red);
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+@keyframes tele-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(400%); opacity: 0; }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-sweep { animation: sweep 3.2s linear infinite; }
+@utility animate-tele-scan { animation: tele-scan 5s linear infinite; }
+@utility animate-flicker { animation: flicker 2s ease-in-out infinite; }
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 620ms cubic-bezier(0.22,1,0.36,1), transform 620ms cubic-bezier(0.22,1,0.36,1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
