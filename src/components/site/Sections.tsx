@@ -295,8 +295,9 @@ export function Contact() {
               <span className="text-red-primary">SOMETHING?</span>
             </p>
             <p className="mt-6 max-w-md leading-relaxed text-racing-gray">
-              Open to collaboration, study groups, competitions, and projects in development, AI, and
-              security.
+              Open to collaboration, commissions, and competitions in 3D modelling, product
+              visualization, and industrial design.
+
             </p>
           </Reveal>
 
