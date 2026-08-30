@@ -44,15 +44,16 @@ export function Hero() {
               <div className="mt-6 flex items-center gap-4">
                 <span className="red-rule w-10 shrink-0" />
                 <p className="font-mono text-[0.7rem] tracking-[0.25em] text-racing-gray sm:text-xs">
-                  GRADE 12 STUDENT • DEVELOPER • AI ENGINEER
+                  GRADE 12 STUDENT • 3D DESIGNER • INDUSTRIAL DESIGN
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={220}>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-racing-gray sm:text-lg">
-                SMA student passionate about programming, artificial intelligence, cybersecurity,
-                languages, and technology.
+                SMA student focused on 3D modelling and industrial design — building vehicles,
+                products, and environments in Blender and Cinema 4D.
+
               </p>
             </Reveal>
 
@@ -294,8 +295,9 @@ export function Contact() {
               <span className="text-red-primary">SOMETHING?</span>
             </p>
             <p className="mt-6 max-w-md leading-relaxed text-racing-gray">
-              Open to collaboration, study groups, competitions, and projects in development, AI, and
-              security.
+              Open to collaboration, commissions, and competitions in 3D modelling, product
+              visualization, and industrial design.
+
             </p>
           </Reveal>
 
